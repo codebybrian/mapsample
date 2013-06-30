@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.codebybrian.mapfragmentsample"
+          android:versionCode="1"
+          android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="17"/>
+
+    <permission
+        android:name="com.codebybrian.mapfragmentsample.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>
+
+
+    <!--Required permissions-->
+
+    <uses-permission android:name="com.codebybrian.mapsample.permission.MAPS_RECEIVE"
+                     android:protectionLevel="signature"/>
+
+    <!--Used by the API to download map tiles from Google Maps servers: -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!--Allows the API to access Google web-based services: -->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+
+    <!--Allows the API to cache map tile data in the device's external storage area: -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!--Optional permissions-->
+
+    <!--Allows the API to use WiFi or mobile cell data (or both) to determine the device's location: -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!--Allows the API to use the Global Positioning System (GPS) to determine the device's location to within a very small area :-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+
+
+    <!--Version 2 of the Google Maps Android API requires OpenGL ES version 2 -->
+    <!--This notifies external services of the requirement. In particular, it has the effect of preventing Google Play Store from displaying your app on devices that don't support OpenGL ES version 2.-->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+
+        <activity android:name="com.codebybrian.mapfragmentsample.MyMapActivity"
+                  android:label="@string/app_name"
+                >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <meta-data
+                android:name="com.google.android.maps.v2.API_KEY"
+                android:value="Your_Key_Goes_Here"/>
+
+    </application>
+
+
+</manifest>
